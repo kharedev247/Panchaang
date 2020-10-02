@@ -1,0 +1,80 @@
+<ion-split-pane contentId="map-content">
+  <ion-menu contentId="map-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Accounts Linked
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list lines="full">
+        <ion-list-header lines="full">
+          <ion-label>Recent</ion-label>
+        </ion-list-header>
+        <ion-item>
+          Accont1
+        </ion-item>
+        <ion-item>
+          Accont2
+        </ion-item>
+        <!-- show the recent ion-list-items -->
+      </ion-list>
+
+      <ion-list lines="full">
+        <ion-item>
+          <ion-label>Add new microsoft account</ion-label>
+          <ion-button (click)="openUrl()" slot="end">
+            <ion-icon name="person-add-outline" slot="end"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-title>
+          Notes
+        </ion-title>
+      </ion-toolbar>
+      <form [formGroup]="endpointForm" (ngSubmit)="saveEndpoint()">
+        <ion-item>
+          <ion-label position="floating">
+            Name
+          </ion-label>
+          <ion-input formControlName="name" #endpointName>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            Message Body
+          </ion-label>
+          <ion-input formControlName="messageBody">
+          </ion-input>
+        </ion-item>
+        <ion-button expand="block" type="submit" color="tertiary" [disabled]="!endpointForm.valid || !endpointForm.dirty">
+          Save
+        </ion-button>
+      </form>
+    </ion-footer>
+  </ion-menu>
+  <ion-content id="map-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-toggle>
+            <ion-button>
+              <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button>
+          </ion-menu-toggle>
+        </ion-buttons>
+        <ion-title>Panchaang</ion-title>
+        <ion-button (click)="refreshData()" slot="end">
+          <ion-icon slot="icon-only" name="refresh-outline"></ion-icon>
+        </ion-button>
+      </ion-toolbar>
+    </ion-header>
+    <p>
+      Here you will see cards for each event soon !!
+    </p>
+  </ion-content>
+</ion-split-pane>

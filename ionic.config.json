@@ -1,0 +1,7 @@
+{
+  "name": "Panchaang",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

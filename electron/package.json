@@ -1,0 +1,55 @@
+{
+  "name": "panchaang",
+  "productName": "Panchaang",
+  "version": "1.0.0",
+  "description": "A single calendar management desktop app",
+  "author": "Ketan Khare",
+  "main": "index.js",
+  "scripts": {
+    "electron:start": "electron ./",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "@capacitor/electron": "^2.2.1",
+    "electron-is-dev": "^1.1.0"
+  },
+  "devDependencies": {
+    "electron": "^9.1.0",
+    "electron-builder": "^22.7.0"
+  },
+  "keywords": [
+    "capacitor",
+    "electron"
+  ],
+  "license": "ISC",
+  "build": {
+    "appId": "com.adastra.panchaang",
+    "files": [
+      "!electron-builder.env"
+    ],
+    "forceCodeSigning": false
+  },
+  "mac": {
+    "category": "public.app-category.business",
+    "icon": "images/icon.png",
+    "identity": null
+  },
+  "win": {
+    "icon": "images/cicon.ico",
+    "target": {
+      "target": "nsis",
+      "arch": [
+        "x64",
+        "ia32"
+      ]
+    }
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "menuCategory": "Panchaang App"
+  }
+}
